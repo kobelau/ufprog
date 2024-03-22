@@ -72,7 +72,7 @@ static HANDLE ch347_test_open(uint32_t if_type, uint32_t devidx, const char *pat
 
 	switch (if_type) {
 	case IF_SPI:
-		if (DevInfo.FuncType != CH347_FUNC_SPI_I2C) {
+		if (DevInfo.FuncType != CH347_FUNC_SPI_I2C && DevInfo.FuncType != CH347_FUNC_JTAG_I2C_SPI) {
 			logm_err("Device %u is not in SPI mode\n", devidx);
 			goto cleanup_dev;
 		}
